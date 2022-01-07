@@ -1,6 +1,22 @@
 HowTo
 Open Pipelines.sln and run the application.
 
+You have to define parameters in the Config.cs file
+
+Following parameters has to be defined:
+- Personal Access Token
+- Azure Dev Ops Organization Name
+- Azure DevOps Project Id (guid)
+
+- Path To Save Variable Groups
+- Path To Save Release Definitions
+- Path To Save Build Definitions
+
+This small application using Azure DevOps REST API's to get all variable groups, pipelines(builds) and releases from your 
+Azure DevOps and stores it on disk in json format. It's useful because than you can keep all these json files in the source control
+and run different analyses f.ex. to find variable group which is not in use anymore and so on.
+
+
 To get definition of all pipelines(builds) has to use REST
 ```
 https://dev.azure.com/{AzureDevOpsOrganizationName}/{AzureDevOpsProjectId}/_apis/build/definitions/
